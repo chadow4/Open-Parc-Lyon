@@ -1,0 +1,244 @@
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "./_header";
+@import "./_billeterie";
+@import "./_footer";
+@import "./_scrollbar";
+@import "./_pannel";
+@import "./_planning";
+@import "./_connexion";
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  .resultsContainer {
+    padding-top: 0.2em;
+  }
+  .bg {
+    background-image: url("../images/bg.png");
+    background-attachment: fixed;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+  }
+}
+
+#item_match_result {
+  .line_separator {
+    height: 0.1vh;
+    background-color: gray;
+    width: 100%;
+    margin-top: 0.2vh;
+    margin-bottom: 0.2vh;
+  }
+  .line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .title {
+    font-weight: bold;
+  }
+  .text {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+  .score {
+    padding-left: 0.5vw;
+    font-weight: normal;
+  }
+  .cardContainer {
+    padding: 2vw;
+  }
+  .scoreContainer {
+    padding: 0.4em 0;
+  }
+  .validText {
+    color: green;
+  }
+  .validIcon {
+    color: green;
+    margin-left: 0.5vw;
+    margin-top: 0.25vh;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.mainpage {
+  margin: 2.5em 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: auto;
+  transition: all 0.5s ease-out;
+  max-width: 60em;
+  @media (min-width: 1280px) {
+    max-width: 75em;
+  }
+  @media (max-width: 992px) {
+    margin: 10em 0em;
+  }
+  .leftCol {
+    @media (min-width: 992px) {
+      padding-right: 2em;
+    }
+  }
+  .rightCol {
+    background-color: transparent;
+    border-color: transparent;
+    display: flex;
+    @media (min-width: 992px) {
+      padding-left: 0.5em;
+    }
+    .toprightcomponent {
+      position: relative;
+      overflow: hidden;
+      background-color: #007330;
+      border-radius: 0.3em;
+      text-shadow: 1px 1px 2px rgb(41, 40, 40);
+          font-weight: bold;
+      height: 15em;
+      display: flex;
+      justify-content: center;
+      align-items: center !important;
+      background-image: url("../images/banner.svg");
+      background-size: cover;
+      margin-bottom: 2vh;
+      border: white solid 0.001em;
+      .image {
+        height: 100%;
+        width: 30%;
+        display: flex;
+        background-image: url("../images/tennisgirltropmignonnefrere.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        @media (min-width: 992px) {
+          padding-left: 0.5em;
+        }
+      }
+      .informations {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        font-weight: bolder;
+        .heureandlieu {
+          margin-top: 0.5em;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          font-weight: 500;
+          align-items: center;
+        }
+      }
+      .componentbutton {
+        height: 100%;
+        width: 30%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        button {
+          border-radius: 20px;
+          color: #007330;
+          width: 60%;
+          margin-bottom: 1.5em;
+          font-weight: bold;
+          transition: 0.5s;
+          &:hover{
+            transform: scale(1.02);
+          }
+        }
+      }
+    }
+    .bottomrightcomponent {
+      display: flex;
+      justify-content: center;
+      .container_rencontre {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .tournois {
+          background-color: white;
+          padding-left: 10%;
+          width: 100%;
+          height: 5em;
+          margin-bottom: 1em;
+          border-radius: 5px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: 0.5s;
+          &:hover{
+            transform: scale(1.02);
+          }
+          .icone-l {
+            margin-right: 0.5em;
+          }
+          .icone-r {
+            margin-left: 0.25em;
+          }
+          .lieux {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #959fa8;
+            text-align: center;
+          }
+          .choix {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            a {
+              color: white;
+              text-decoration: none;
+              margin-right: 2em;
+              color: #007330;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.container_user{
+  display:flex;
+  flex-direction: column;
+  .container_infos_text{
+    margin-bottom: 3em;
+    h1 {
+      color: white;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 2px rgb(41, 40, 40);
+      font-weight: bold;
+   } };
+}

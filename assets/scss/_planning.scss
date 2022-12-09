@@ -1,0 +1,67 @@
+.mainplanning{
+    margin-top:10em;
+    .container_recherche {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 3em;
+        h1 {
+          color: white;
+          text-transform: uppercase;
+          text-shadow: 1px 1px 2px rgb(41, 40, 40);
+          font-weight: bold;
+        }
+      }
+      .container_affichage_tournois {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3em;
+        .tournois {
+          color: black;
+          background-color: white;
+          width: 80%;
+          height: 5em;
+          margin-bottom: 1em;
+          border-radius: 5px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text-decoration: none;
+          transition: 0.5s;
+          &:hover{
+            transform: scale(1.02);
+          }
+          .icone-l {
+            margin-right: 0.5em;
+          }
+          .icone-r {
+            margin-left: 0.25em;
+          }
+          .lieux {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #959fa8;
+          }
+          .choix {
+           
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            p {
+              color: white;
+              text-decoration: none;
+              margin-right: 2em;
+              color: #007330;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+}

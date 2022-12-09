@@ -1,0 +1,36 @@
+{% for i in 0..(rencontres|length - 1) %}
+	<div class="scoreContainer">
+		<div class="line">
+			<div class="line">
+
+				<p class="text validText">{{ joueurs[i]["equipe1"][0].nom }}<br/>
+					{% if joueurs[i]["equipe1"][1] is defined %}
+						{{ joueurs[i]["equipe1"][1].nom }}
+					{% endif %}
+				</p>
+				<i class="far fa-check-circle validIcon"></i>
+			</div>
+
+			<div>
+				{% for t in 0..(rencontres[i].score|length / 2)  %}
+					<span class="text score">{{ rencontres[i].score|slice(t*2, 1) }}</span>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="line_separator"></div>
+		<div class="line">
+			<div class="line">
+				<p class="text">{{ joueurs[i]["equipe2"][0].nom }}<br/>
+					{% if joueurs[i]["equipe2"][1] is defined %}
+						{{ joueurs[i]["equipe2"][1].nom }}
+					{% endif %}
+				</p>
+			</div>
+			<div>
+				{% for t in 0..(rencontres[i].score|length / 2)  %}
+					<span class="text score">{{ rencontres[i].score|slice(t*2+1, 1) }}</span>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endfor %}

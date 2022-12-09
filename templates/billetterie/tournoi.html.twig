@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BilletterieController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+	<div data-aos="fade" class="container mainbilleterie text-center">
+		<div class="container_recherche">
+			<h1>Choississez votre tournoi</h1>
+		</div>
+		<div class="container_rencontre">
+			{% for tournoi in tournois %}
+				<a class="tournois" href="{{ path('billetterie_journee',{'tournoi': tournoi.id}) }}">
+					<div class="lieux">
+						<p>
+							<i class="icone-l fas fa-map-marker-alt"></i>
+							Tournoi
+							{{ tournoi.type }}
+						</p>
+						<p>
+							<i class="icone-l far fa-clock"></i>
+							Debut
+							{{ tournoi.datedebut|date("m/d/Y") }}</p>
+					</div>
+					<div class="choix">
+						<p>Choisir
+							<i class="icone-r fas fa-arrow-right"></i>
+						</p>
+					</div>
+
+				</a>
+			{% endfor %}
+
+		</div>
+
+	</div>
+
+{% endblock %}

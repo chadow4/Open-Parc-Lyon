@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	<div data-aos="fade" class="container-fluid mainpage" id="item_match_result">
+		<div class="row">
+			<div data-aos="fade-right" class="col-lg-4 col-md-12 leftCol">
+				<div class="card cardContainer">
+					<h6 class="card-title title">Résultat des matchs</h6>
+					<div class="resultsContainer">
+						{{ render(path('light.resultat')) }}
+					</div>
+				</div>
+			</div>
+			<div data-aos="fade" class="card col-lg-8 col-md-12 rightCol">
+				<div class="toprightcomponent">
+					<div class="image"></div>
+					<div class="informations">
+						<h3>Prochain Match
+						</h3>
+						<h3>Demi-Final</h3>
+						<p>Novak Djokovic</p>
+						<p>vs</p>
+						<p>Raphaël Nadal</p>
+						<div class="heureandlieu">
+							<p>
+								<i class="far fa-clock"></i>
+								5:00 PM
+							</p>
+
+							<p>
+								<i class="fas fa-map-marker-alt"></i>
+								Tournois simple
+
+							</p>
+						</div>
+					</div>
+
+					<div class="componentbutton">
+						<button type="button" class="btn btn-light">Billeterie
+							<i class="fas fa-arrow-right"></i>
+						</button>
+					</div>
+
+				</div>
+
+				<div class="align-items-start bottomrightcomponent">
+					<div class="container_rencontre">
+    {% for i in 1..4 %}
+    <div class="tournois">
+        <div class="lieux">
+            <p><i class="icone-l fas fa-map-marker-alt"></i> Tournoi simple</p>
+            <p><i class="icone-l far fa-clock"></i> Debut 05/17/12</p>
+        </div>
+        <div class="choix">
+            <a href="#">Choisir <i class="icone-r fas fa-arrow-right"></i></a>
+        </div>
+    
+    </div>
+    {% endfor %}
+  
+  </div>
+					</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

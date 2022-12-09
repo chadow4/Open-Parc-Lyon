@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JourneeController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div data-aos="fade" class="container mainbilleterie text-center">
+		<div class="container_infos_gradin">
+			<h1>Choix du types de gradin</h1>
+		</div>
+		<div class="container_gradin">
+			<div class="container_gradin_infos">
+				<div class="infos">
+				</div>
+				<div class="gradin_img"></div>
+				<div class="component_button">
+					<a href="{{ path('billetterie_choixbillet',{'journee': journee.id, 'gradin': "Gradin Haut"}) }}" class="btn btn-secondary" class="button">Gradin haut - Restant:
+						{{billets_restant[1][1]}}
+					</a>
+					<a href="{{ path('billetterie_choixbillet',{'journee': journee.id, 'gradin': "Gradin Bas"}) }}" class="btn btn-orange" class="button">Gradin bas - Restant:
+						{{billets_restant[0][1]}}
+					</a>
+					<a href="{{ path('billetterie_choixbillet',{'journee': journee.id, 'gradin': "Loge"}) }}" class="btn btn-primary" class="button">Loge - Restant:
+						{{billets_restant[2][1]}}
+					</a>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+</div>{% endblock %}

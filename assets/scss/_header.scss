@@ -1,0 +1,29 @@
+header {
+    background-color: white;
+    font-weight: 600;
+    .bg-light {
+        background-color: white !important;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        color: rgba(0, 0, 0, 0.55);
+    }
+    nav {
+        margin: 0 1em;
+        background-color: white;
+        li {
+            text-decoration: none;
+            padding: 0.5em 0.75em;
+        }
+        .navbar-brand {
+            margin-right: 1em;
+            font-weight: bold;
+            transition:0.5s;
+            
+        }
+        .logo{
+            &:hover{
+                transform: scale(1.02);
+              }
+        }
+    }
+}

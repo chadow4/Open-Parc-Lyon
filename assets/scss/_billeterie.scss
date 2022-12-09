@@ -1,0 +1,311 @@
+    .mainbilleterie {
+        margin-top: 10em;
+        .btn-success {
+            color: #fff;
+            background-color: #198754;
+            border-color: #198754;
+            width: 60%;
+            transition: 0.5s;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        .container_recherche {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 3em;
+            h1 {
+                color: white;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 2px rgb(41, 40, 40);
+                font-weight: bold;
+            }
+        }
+        .container_infos_gradin {
+            margin-bottom: 3em;
+            h1 {
+                color: white;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 2px rgb(41, 40, 40);
+                font-weight: bold;
+            }
+        }
+        .container_rencontre {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3em;
+            .tournois {
+                color: black;
+                background-color: white;
+                width: 80%;
+                height: 5em;
+                margin-bottom: 1em;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-decoration: none;
+                transition: 0.5s;
+                &:hover {
+                    transform: scale(1.02);
+                }
+                .icone-l {
+                    margin-right: 0.5em;
+                }
+                .icone-r {
+                    margin-left: 0.25em;
+                }
+                .lieux {
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    color: #959fa8;
+                }
+                .choix {
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    p {
+                        color: white;
+                        text-decoration: none;
+                        margin-right: 2em;
+                        color: #007330;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .container_journee {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 3em;
+            .container_journee_infos {
+                display: flex;
+                background-color: white;
+                justify-content: center;
+                flex-direction: column;
+                margin-bottom: 1em;
+                width: 80%;
+                border-radius: 5px;
+                text-decoration: none;
+                color: black;
+                transition: 0.5s;
+                &:hover {
+                    transform: scale(1.02);
+                }
+                .infos {
+                    background-color: white;
+                    padding: 2em;
+                    display: flex;
+                    border-radius: 5px;
+                    justify-content: space-between;
+                    align-items: center;
+                    .icone-l {
+                        margin-right: 0.5em;
+                    }
+                    .icone-r {
+                        margin-left: 0.25em;
+                    }
+                    p {
+                        color: #959fa8;
+                        text-decoration: none;
+                    }
+                    .choix {
+                        color: #007330;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                }
+                .lieu {
+                    p {
+                        color: #959fa8;
+                    }
+                }
+                .versus {
+                    margin-bottom: 3em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    .regroup-tab {
+                        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+                        margin: 1em 0;
+                        width: 80%;
+                        margin: 2em 0;
+                        .court {
+                            margin: 2em 0;
+                        }
+                        .score {
+                            margin: 2em 0;
+                        }
+                        .tableau {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin: 1em;
+                            padding: 1em;
+                            box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+                            .vs {
+                                width: 20%;
+                            }
+                            .equipe1 {
+                                width: 40%;
+                            }
+                            .equipe2 {
+                                width: 40%
+                            }
+                            .name {
+                                color: #959fa8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .container_gradin {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 10vh;
+            .container_gradin_infos {
+                display: flex;
+                background-color: white;
+                justify-content: center;
+                flex-direction: column;
+                margin-bottom: 1em;
+                width: 80%;
+                border-radius: 5px;
+                padding: 1.5em;
+                text-transform: uppercase;
+                .infos {}
+                .gradin_img {
+                    background-image: url("../images/gradin.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    margin: 5em 0;
+                    height: 40vh;
+                    width: 100%;
+                }
+                .component_button {
+                    display: flex;
+                    justify-content: center;
+                    .btn {
+                        margin: 1em;
+                        width: 25%;
+                        transition: 0.5s;
+                        &:hover {
+                            transform: scale(1.02);
+                        }
+                    }
+                    .btn-orange {
+                        background-color: rgba(255, 136, 1, 0.822);
+                    }
+                }
+            }
+        }
+        .container_panier {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            transition: all 0.5s;
+            margin-bottom: 20vh;
+            @media (max-width: 1400px) {
+                flex-direction: column;
+            }
+            .container_panier_infos {
+                display: flex;
+                background-color: white;
+                justify-content: center;
+                flex-direction: column;
+                margin: 2em;
+                border-radius: 20px;
+                width: 35em;
+                padding: 2em 0em;
+                .btn-success {
+                    color: #fff;
+                    background-color: #198754;
+                    border-color: #198754;
+                    width: 60%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    transition: 0.5s;
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+                #ligne {
+                    background-color: #dfdfdf;
+                    height: 0.15em;
+                    margin-right: 1em;
+                    margin-left: 1em;
+                }
+                .infos {
+                    background-color: white;
+                    color: #959fa8;
+                    display: flex;
+                    border-radius: 5px;
+                    padding: 1em;
+                    justify-content: space-around;
+                    align-items: center;
+                    p {
+                        color: #959fa8;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    a {
+                        color: #007330;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                }
+                .versus {
+                    .tableau {
+                        border: 1px solid #959fa8;
+                        margin: 0.5em;
+                        border-radius: 20px;
+                        padding: 0.5em;
+                        display: flex;
+                        justify-content: space-around;
+                        div {
+                            display: flex;
+                            width: 5em;
+                            justify-content: space-between;
+                            .bouton1 {
+                                background-color: white;
+                                border: 1px solid black;
+                                color: black;
+                                border-radius: 20em;
+                                height: 2em;
+                                width: 2em;
+                            }
+                            .bouton2 {
+                                background-color: black;
+                                color: white;
+                                border-radius: 20em;
+                                height: 2em;
+                                width: 2em;
+                            }
+                        }
+                        .name {
+                            color: black;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }

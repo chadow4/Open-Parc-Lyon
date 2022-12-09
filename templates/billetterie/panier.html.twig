@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JourneeController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div data-aos="fade" class="container mainbilleterie text-center">
+		<div class="container_panier container">
+
+			<div id="total">
+				<div class="container_panier_infos">
+					<div class="infos">
+						<h2>Votre Panier</h2>
+					</div>
+					<div id="ligne"></div>
+					<div class="versus">
+						{% for billet in panier[0].billet %}
+							<div class="tableau">
+								<p class="name">{{billet.type}}
+									-
+									{{billet.categorie}}
+									- Tournoi
+									{{billet.journee.tournoi.type}}
+									-
+									{{billet.journee}}</p>
+							</div>
+						{% endfor %}
+					</div>
+					<div id="ligne"></div>
+					<div class="infos">
+						<h2>Total</h2>
+						<h2>{{panier[0].prix}}
+							€</h2>
+
+					</div>
+					<a href="{{ path('accueil_vider_panier') }}">
+						<button type="button" class="btn payer btn-success" su>Payer</button>
+					</a>
+				</div>
+
+			</div>
+		{% endblock %}

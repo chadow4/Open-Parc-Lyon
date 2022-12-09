@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PlanningController!
+{% endblock %}
+
+{% block body %}
+	<div data-aos="fade" class="container mainbilleterie text-center">
+		<div class="container_recherche">
+			<h1>Journées du tournoi
+				{{tournoi.type}}
+				du
+				{{ tournoi.dateDebut|date('d/m/Y') }}
+			</h1>
+		</div>
+		<div class="container_journee">
+			{% for journee in journees %}
+				<a href="" class="container_journee_infos">
+					<div class="infos">
+						<h2>{{ journee }}</h2>
+					</div>
+					<div class="versus" id="item_match_result">
+						{% for rencontre in journee.rencontres %}
+							<div class="regroup-tab">
+								<p class="court">Court :
+									{{rencontre.court}}</p>
+								<div class="tableau">
+									<p class="name equipe1">{{ rencontre.equipes[0] }}</p>
+									<p class="vs">vs</p>
+									<p class="name equipe2">{{ rencontre.equipes[1] }}</p>
+								</div>
+								<div>
+									{% for t in 0..(rencontre.score|length / 2)  %}
+										<span class="text score">{{ rencontre.score|slice(t*2, 1) }}</span>
+									{% endfor %}
+								</div>
+								<div class="line_separator"></div>
+								<div>
+									{% for t in 0..(rencontre.score|length / 2)  %}
+										<span class="text score">{{ rencontre.score|slice(t*2+1, 1) }}</span>
+									{% endfor %}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</a>
+			{% endfor %}
+
+		</div>
+
+	</div>
+{% endblock %}

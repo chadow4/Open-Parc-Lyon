@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JourneeController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div data-aos="fade" class="container mainbilleterie text-center">
+		<div class="container_recherche">
+			<h1>Choix de la journée et du court</h1>
+		</div>
+		<div class="container_journee">
+			{% for journee in journees %}
+				<a href="{{ path('billetterie_gradin',{'journee': journee.id}) }}" class="container_journee_infos">
+					<div class="infos">
+						<h2>{{ journee }}</h2>
+						<p class="choix">Choisir
+							<i class="icone-r fas fa-arrow-right"></i>
+						</p>
+					</div>
+					<div class="versus">
+						{% for rencontre in journee.rencontres %}
+							<div class="regroup-tab">
+								<p class="court">Court : {{rencontre.court}}</p>
+								<div class="tableau">
+									<p class="name equipe1">{{ rencontre.equipes[0] }}</p>
+									<p class="vs">vs</p>
+									<p class="name equipe2">{{ rencontre.equipes[1] }}</p>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</a>
+			{% endfor %}
+
+		</div>
+
+	</div>
+{% endblock %}

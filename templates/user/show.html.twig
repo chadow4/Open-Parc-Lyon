@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+   
+
+    <div data-aos="fade-down" class="container container_user">
+        <div class="container_infos_text">
+            <h1>Mes informations</h1>
+        </div>
+        <div class="card">
+            <p> <span> Email :</span> {{user.email}} </p>
+            <p> <span> Role : </span> {{ user.roles ? user.roles|json_encode : '' }} </p>
+            <p> <span> Nom : </span> {{user.lastname}} </p>
+            <p> <span> Prenom :</span> {{user.firstName}} </p>
+            <p> <span> Télephone : </span> {{user.phone}} </p>
+        </div>
+    </div>
+
+
+<style>
+
+.container_user{
+     display:flex;
+     justify-content:center;
+     height:50vh; 
+     align-items:center;
+     margin-top:5em;
+}
+.card{
+    width:50%;
+    text-align:justify;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+p{
+    padding:0.5em;
+}
+
+h1{
+    font-weight:bold;
+    
+}
+
+span{
+    font-weight:bold;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PlanningController!{% endblock %}
+
+{% block body %}
+<div class="container">
+{% for rencontre in rencontres %}
+			 {{rencontre.equipes[0]}}
+              {{rencontre.equipes[1]}}
+			{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Hello PlanningController!
+                        
+                    
+                
+            
+        
+    
+{% endblock %}
+
+{% block body %}
+    <div data-aos="fade" class="container mainplanning text-center">
+        <div class="container_recherche">
+            <h1>
+                Planning des matchs - Affichage des différents Tournois
+            </h1>
+        </div>
+        <div class="container_affichage_tournois">
+            {% for tournoi in tournois %}
+                <a class="tournois" href="{{ path('planning_journee',{'tournoi': tournoi.id}) }}">
+                    <div class="lieux">
+                        <p>
+                            <i class="icone-l fas fa-map-marker-alt"></i>
+                            Tournoi 
+                            {{ tournoi.type }}
+                        </p>
+
+                        <p>
+                            <i class="icone-l far fa-clock"></i>
+                            Debut 
+                            {{ tournoi.datedebut|date("m/d/Y") }}
+                        </p>
+
+                    </div>
+                    <div class="choix">
+                        <p>
+                            Choisir 
+                            <i class="icone-r fas fa-arrow-right"></i>
+                        </p>
+                    </div>
+
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
